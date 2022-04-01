@@ -4,8 +4,8 @@ const port = 3000
 const { execute, get } = require('./scraping.js')
 
 app.get('/', async (req, res) => {
-  const body = { dolar: await get('dolar'), euro: await get('euro') }
-  res.send(body)
+  const { results: [result] } = await get()
+  res.send(result)
 })
 
 app.listen(port, () => {
