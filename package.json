@@ -1,0 +1,21 @@
+{
+  "name": "api-dolar-bcv",
+  "version": "1.0.0",
+  "description": "pequeño módulo que sirve una api rest del dolar de BCV utilizando web scraping y MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.3",
+    "jsdom": "19.0.0",
+    "mysql2": "2.3.3",
+    "puppeteer": "13.5.1"
+  },
+  "devDependencies": {
+    "standard": "16.0.4"
+  }
+}
