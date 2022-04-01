@@ -54,4 +54,5 @@ async function execute () {
   const result = await scraping()
   console.info(result)
 }
+
 module.exports = { get, execute }
