@@ -6,8 +6,8 @@ const scraping = async () => {
   const insert = async obj => {
     const { usd, eur } = obj
     const queryString = {
-      dolar: 'INSERT INTO dolar(value,) VALUES(?)',
-      euro: 'INSERT INTO euro(value,) VALUES(?)'
+      dolar: 'INSERT INTO dolar(value) VALUES(?)',
+      euro: 'INSERT INTO euro(value) VALUES(?)'
     }
     const q1 = await query(queryString.dolar, [usd])
     const q2 = await query(queryString.euro, [eur])
@@ -44,8 +44,8 @@ const scraping = async () => {
   }
 }
 
-async function get (table) {
-  const queryString = `SELECT value as ${table} FROM ${table} WHERE time = MAX(time)`
+async function get () {
+  const queryString = 'SELECT dolar.value as dolar, euro.value as euro, dolar.time as time FROM dolar JOIN euro on euro.time = dolar.time ORDER BY dolar.time DESC LIMIT 1'
   const result = await query(queryString)
   return result
 }
